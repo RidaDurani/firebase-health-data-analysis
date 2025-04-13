@@ -28,6 +28,7 @@ def extract_value(field):
 #Flattening the high level fields
 flat_records = []
 
+
 for doc in records:
     fields = doc["fields"]
     flat = {k: extract_value(v) for k, v in fields.items()}
@@ -66,9 +67,9 @@ for doc in records:
     temp = vitals.get("temperature", [])
 
     #Flattening fields within vitals
-    flat["vitals_heart_rate_mean"] = heart_rate
-    flat["vitals_bp_latest"] = bp
-    flat["vitals_temp_max"] = temp
+    flat["vitals_heart_rate"] = heart_rate
+    flat["vitals_bp"] = bp
+    flat["vitals_temp"] = temp
 
     #Adding the flattened record to the list
     flat_records.append(flat)
@@ -78,3 +79,31 @@ proccessed_df = pd.DataFrame(flat_records)
 
 #Saving the processed data to a CSV file
 proccessed_df.to_csv('C:\\Users\\Rida.KD\\Projects\\a_health_data_analysis\\firebase-health-data-analysis\\data\\processed_data.csv', index=False)
+
+# Creating a new ID column from the 'name' field
+proccessed_df['ID'] = proccessed_df['name'].apply(lambda x: x.split('/')[-1] if isinstance(x, str) else '')
+
+# Expanding vitals_heart_rate to individual columns
+for i in range(6):
+    proccessed_df[f'vitals_heart_rate_{i+1}'] = proccessed_df['vitals_heart_rate'].apply(
+        lambda x: x[i] if isinstance(x, list) and len(x) > i else None
+    )
+
+# Expanding vitals_bp to individual columns
+for i in range(5):
+    proccessed_df[f'vitals_bp_{i+1}'] = proccessed_df['vitals_bp'].apply(
+        lambda x: x[i] if isinstance(x, list) and len(x) > i else None
+    )
+
+# Expanding vitals_temp to individual columns
+for i in range(5):
+    proccessed_df[f'vitals_temp_{i+1}'] = proccessed_df['vitals_temp'].apply(
+        lambda x: x[i] if isinstance(x, list) and len(x) > i else None
+    )
+
+
+proccessed_df.drop(columns=['name','vitals_heart_rate', 'vitals_bp', 'vitals_temp'], inplace=True)
+
+
+#Saving the processed data to a CSV file
+proccessed_df.to_csv('C:\\Users\\Rida.KD\\Projects\\a_health_data_analysis\\firebase-health-data-analysis\\data\\final_processed_data.csv', index=False)

@@ -6,11 +6,11 @@
         "sleep": {
           "mapValue": {
             "fields": {
-              "quality": {
-                "stringValue": "fair"
-              },
               "duration_hours": {
                 "doubleValue": 6.8
+              },
+              "quality": {
+                "stringValue": "fair"
               },
               "interruptions": {
                 "integerValue": "2"
@@ -21,38 +21,41 @@
         "nutrition": {
           "mapValue": {
             "fields": {
+              "macros": {
+                "mapValue": {
+                  "fields": {
+                    "fat_g": {
+                      "integerValue": "58"
+                    },
+                    "carbs_g": {
+                      "integerValue": "270"
+                    },
+                    "protein_g": {
+                      "integerValue": "90"
+                    }
+                  }
+                }
+              },
               "calories": {
                 "integerValue": "2100"
               },
               "water_oz": {
                 "integerValue": "48"
-              },
-              "macros": {
-                "mapValue": {
-                  "fields": {
-                    "protein_g": {
-                      "integerValue": "90"
-                    },
-                    "carbs_g": {
-                      "integerValue": "270"
-                    },
-                    "fat_g": {
-                      "integerValue": "58"
-                    }
-                  }
-                }
               }
             }
           }
         },
+        "date": {
+          "stringValue": "2025-03-21"
+        },
         "activity": {
           "mapValue": {
             "fields": {
-              "active_minutes": {
-                "integerValue": "38"
-              },
               "sedentary_hours": {
                 "doubleValue": 9.7
+              },
+              "active_minutes": {
+                "integerValue": "38"
               },
               "steps": {
                 "integerValue": "5200"
@@ -131,9 +134,6 @@
               }
             }
           }
-        },
-        "date": {
-          "stringValue": "2025-03-21"
         }
       },
       "createTime": "2025-03-27T11:43:39.925877Z",
@@ -142,78 +142,9 @@
     {
       "name": "projects/rn-firebase-ml-test/databases/(default)/documents/patientData/2DCJ0E7x9uSiMc8M9Hje",
       "fields": {
-        "date": {
-          "stringValue": "2025-03-21"
-        },
-        "activity": {
-          "mapValue": {
-            "fields": {
-              "steps": {
-                "integerValue": "5200"
-              },
-              "sedentary_hours": {
-                "doubleValue": 9.7
-              },
-              "active_minutes": {
-                "integerValue": "38"
-              }
-            }
-          }
-        },
-        "nutrition": {
-          "mapValue": {
-            "fields": {
-              "calories": {
-                "integerValue": "2100"
-              },
-              "water_oz": {
-                "integerValue": "48"
-              },
-              "macros": {
-                "mapValue": {
-                  "fields": {
-                    "protein_g": {
-                      "integerValue": "90"
-                    },
-                    "fat_g": {
-                      "integerValue": "58"
-                    },
-                    "carbs_g": {
-                      "integerValue": "270"
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
         "vitals": {
           "mapValue": {
             "fields": {
-              "heart_rate": {
-                "arrayValue": {
-                  "values": [
-                    {
-                      "integerValue": "71"
-                    },
-                    {
-                      "integerValue": "73"
-                    },
-                    {
-                      "integerValue": "70"
-                    },
-                    {
-                      "integerValue": "72"
-                    },
-                    {
-                      "integerValue": "74"
-                    },
-                    {
-                      "integerValue": "72"
-                    }
-                  ]
-                }
-              },
               "blood_pressure": {
                 "arrayValue": {
                   "values": [
@@ -255,21 +186,90 @@
                     }
                   ]
                 }
+              },
+              "heart_rate": {
+                "arrayValue": {
+                  "values": [
+                    {
+                      "integerValue": "71"
+                    },
+                    {
+                      "integerValue": "73"
+                    },
+                    {
+                      "integerValue": "70"
+                    },
+                    {
+                      "integerValue": "72"
+                    },
+                    {
+                      "integerValue": "74"
+                    },
+                    {
+                      "integerValue": "72"
+                    }
+                  ]
+                }
               }
             }
           }
         },
+        "date": {
+          "stringValue": "2025-03-21"
+        },
         "sleep": {
           "mapValue": {
             "fields": {
-              "quality": {
-                "stringValue": "fair"
+              "interruptions": {
+                "integerValue": "2"
               },
               "duration_hours": {
                 "doubleValue": 6.8
               },
-              "interruptions": {
-                "integerValue": "2"
+              "quality": {
+                "stringValue": "fair"
+              }
+            }
+          }
+        },
+        "activity": {
+          "mapValue": {
+            "fields": {
+              "sedentary_hours": {
+                "doubleValue": 9.7
+              },
+              "steps": {
+                "integerValue": "5200"
+              },
+              "active_minutes": {
+                "integerValue": "38"
+              }
+            }
+          }
+        },
+        "nutrition": {
+          "mapValue": {
+            "fields": {
+              "macros": {
+                "mapValue": {
+                  "fields": {
+                    "fat_g": {
+                      "integerValue": "58"
+                    },
+                    "protein_g": {
+                      "integerValue": "90"
+                    },
+                    "carbs_g": {
+                      "integerValue": "270"
+                    }
+                  }
+                }
+              },
+              "calories": {
+                "integerValue": "2100"
+              },
+              "water_oz": {
+                "integerValue": "48"
               }
             }
           }
@@ -281,6 +281,24 @@
     {
       "name": "projects/rn-firebase-ml-test/databases/(default)/documents/patientData/3xP5bsc13fVaehGMH2wd",
       "fields": {
+        "date": {
+          "stringValue": "2025-03-17"
+        },
+        "activity": {
+          "mapValue": {
+            "fields": {
+              "steps": {
+                "integerValue": "4500"
+              },
+              "sedentary_hours": {
+                "doubleValue": 10.5
+              },
+              "active_minutes": {
+                "integerValue": "35"
+              }
+            }
+          }
+        },
         "vitals": {
           "mapValue": {
             "fields": {
@@ -359,11 +377,11 @@
               "quality": {
                 "stringValue": "poor"
               },
-              "interruptions": {
-                "integerValue": "3"
-              },
               "duration_hours": {
                 "doubleValue": 6.5
+              },
+              "interruptions": {
+                "integerValue": "3"
               }
             }
           }
@@ -371,12 +389,6 @@
         "nutrition": {
           "mapValue": {
             "fields": {
-              "water_oz": {
-                "integerValue": "45"
-              },
-              "calories": {
-                "integerValue": "2200"
-              },
               "macros": {
                 "mapValue": {
                   "fields": {
@@ -391,27 +403,15 @@
                     }
                   }
                 }
+              },
+              "calories": {
+                "integerValue": "2200"
+              },
+              "water_oz": {
+                "integerValue": "45"
               }
             }
           }
-        },
-        "activity": {
-          "mapValue": {
-            "fields": {
-              "active_minutes": {
-                "integerValue": "35"
-              },
-              "steps": {
-                "integerValue": "4500"
-              },
-              "sedentary_hours": {
-                "doubleValue": 10.5
-              }
-            }
-          }
-        },
-        "date": {
-          "stringValue": "2025-03-17"
         }
       },
       "createTime": "2025-03-27T11:43:39.925877Z",
@@ -420,66 +420,6 @@
     {
       "name": "projects/rn-firebase-ml-test/databases/(default)/documents/patientData/6r6bGwNOMEfTVRXMO9BR",
       "fields": {
-        "sleep": {
-          "mapValue": {
-            "fields": {
-              "interruptions": {
-                "integerValue": "3"
-              },
-              "duration_hours": {
-                "integerValue": "6"
-              },
-              "quality": {
-                "stringValue": "poor"
-              }
-            }
-          }
-        },
-        "nutrition": {
-          "mapValue": {
-            "fields": {
-              "macros": {
-                "mapValue": {
-                  "fields": {
-                    "protein_g": {
-                      "integerValue": "85"
-                    },
-                    "fat_g": {
-                      "integerValue": "70"
-                    },
-                    "carbs_g": {
-                      "integerValue": "330"
-                    }
-                  }
-                }
-              },
-              "water_oz": {
-                "integerValue": "45"
-              },
-              "calories": {
-                "integerValue": "2400"
-              }
-            }
-          }
-        },
-        "activity": {
-          "mapValue": {
-            "fields": {
-              "active_minutes": {
-                "integerValue": "35"
-              },
-              "sedentary_hours": {
-                "doubleValue": 10.8
-              },
-              "steps": {
-                "integerValue": "4800"
-              }
-            }
-          }
-        },
-        "date": {
-          "stringValue": "2025-03-28"
-        },
         "vitals": {
           "mapValue": {
             "fields": {
@@ -500,6 +440,27 @@
                     },
                     {
                       "stringValue": "128/85"
+                    }
+                  ]
+                }
+              },
+              "temperature": {
+                "arrayValue": {
+                  "values": [
+                    {
+                      "doubleValue": 98.9
+                    },
+                    {
+                      "doubleValue": 98.7
+                    },
+                    {
+                      "integerValue": "99"
+                    },
+                    {
+                      "doubleValue": 98.8
+                    },
+                    {
+                      "doubleValue": 99.1
                     }
                   ]
                 }
@@ -527,27 +488,66 @@
                     }
                   ]
                 }
+              }
+            }
+          }
+        },
+        "sleep": {
+          "mapValue": {
+            "fields": {
+              "quality": {
+                "stringValue": "poor"
               },
-              "temperature": {
-                "arrayValue": {
-                  "values": [
-                    {
-                      "doubleValue": 98.9
+              "duration_hours": {
+                "integerValue": "6"
+              },
+              "interruptions": {
+                "integerValue": "3"
+              }
+            }
+          }
+        },
+        "activity": {
+          "mapValue": {
+            "fields": {
+              "steps": {
+                "integerValue": "4800"
+              },
+              "sedentary_hours": {
+                "doubleValue": 10.8
+              },
+              "active_minutes": {
+                "integerValue": "35"
+              }
+            }
+          }
+        },
+        "date": {
+          "stringValue": "2025-03-28"
+        },
+        "nutrition": {
+          "mapValue": {
+            "fields": {
+              "water_oz": {
+                "integerValue": "45"
+              },
+              "macros": {
+                "mapValue": {
+                  "fields": {
+                    "carbs_g": {
+                      "integerValue": "330"
                     },
-                    {
-                      "doubleValue": 98.7
+                    "fat_g": {
+                      "integerValue": "70"
                     },
-                    {
-                      "integerValue": "99"
-                    },
-                    {
-                      "doubleValue": 98.8
-                    },
-                    {
-                      "doubleValue": 99.1
+                    "protein_g": {
+                      "integerValue": "85"
                     }
-                  ]
+                  }
                 }
+              },
+              "calories": {
+                "integerValue": "2400"
               }
             }
           }
@@ -559,6 +559,66 @@
     {
       "name": "projects/rn-firebase-ml-test/databases/(default)/documents/patientData/9A3FURfOO7c55asePIFn",
       "fields": {
+        "nutrition": {
+          "mapValue": {
+            "fields": {
+              "calories": {
+                "integerValue": "1850"
+              },
+              "macros": {
+                "mapValue": {
+                  "fields": {
+                    "fat_g": {
+                      "integerValue": "50"
+                    },
+                    "carbs_g": {
+                      "integerValue": "220"
+                    },
+                    "protein_g": {
+                      "integerValue": "100"
+                    }
+                  }
+                }
+              },
+              "water_oz": {
+                "integerValue": "60"
+              }
+            }
+          }
+        },
+        "sleep": {
+          "mapValue": {
+            "fields": {
+              "interruptions": {
+                "integerValue": "1"
+              },
+              "quality": {
+                "stringValue": "good"
+              },
+              "duration_hours": {
+                "doubleValue": 8.1
+              }
+            }
+          }
+        },
+        "activity": {
+          "mapValue": {
+            "fields": {
+              "active_minutes": {
+                "integerValue": "55"
+              },
+              "steps": {
+                "integerValue": "8200"
+              },
+              "sedentary_hours": {
+                "doubleValue": 8.2
+              }
+            }
+          }
+        },
+        "date": {
+          "stringValue": "2025-03-19"
+        },
         "vitals": {
           "mapValue": {
             "fields": {
@@ -630,66 +690,6 @@
               }
             }
           }
-        },
-        "date": {
-          "stringValue": "2025-03-19"
-        },
-        "sleep": {
-          "mapValue": {
-            "fields": {
-              "quality": {
-                "stringValue": "good"
-              },
-              "duration_hours": {
-                "doubleValue": 8.1
-              },
-              "interruptions": {
-                "integerValue": "1"
-              }
-            }
-          }
-        },
-        "activity": {
-          "mapValue": {
-            "fields": {
-              "active_minutes": {
-                "integerValue": "55"
-              },
-              "sedentary_hours": {
-                "doubleValue": 8.2
-              },
-              "steps": {
-                "integerValue": "8200"
-              }
-            }
-          }
-        },
-        "nutrition": {
-          "mapValue": {
-            "fields": {
-              "water_oz": {
-                "integerValue": "60"
-              },
-              "calories": {
-                "integerValue": "1850"
-              },
-              "macros": {
-                "mapValue": {
-                  "fields": {
-                    "protein_g": {
-                      "integerValue": "100"
-                    },
-                    "fat_g": {
-                      "integerValue": "50"
-                    },
-                    "carbs_g": {
-                      "integerValue": "220"
-                    }
-                  }
-                }
-              }
-            }
-          }
         }
       },
       "createTime": "2025-03-27T11:43:39.925877Z",
@@ -698,20 +698,17 @@
     {
       "name": "projects/rn-firebase-ml-test/databases/(default)/documents/patientData/BO8Lma84mSt2jPz94u7d",
       "fields": {
-        "date": {
-          "stringValue": "2025-03-29"
-        },
-        "sleep": {
+        "activity": {
           "mapValue": {
             "fields": {
-              "duration_hours": {
-                "integerValue": "7"
+              "steps": {
+                "integerValue": "6000"
               },
-              "interruptions": {
-                "integerValue": "2"
+              "sedentary_hours": {
+                "doubleValue": 9.5
               },
-              "quality": {
-                "stringValue": "fair"
+              "active_minutes": {
+                "integerValue": "45"
               }
             }
           }
@@ -719,26 +716,41 @@
         "nutrition": {
           "mapValue": {
             "fields": {
+              "calories": {
+                "integerValue": "2200"
+              },
               "water_oz": {
                 "integerValue": "50"
               },
               "macros": {
                 "mapValue": {
                   "fields": {
-                    "protein_g": {
-                      "integerValue": "90"
-                    },
                     "fat_g": {
                       "integerValue": "65"
+                    },
+                    "protein_g": {
+                      "integerValue": "90"
                     },
                     "carbs_g": {
                       "integerValue": "300"
                     }
                   }
                 }
+              }
+            }
+          }
+        },
+        "sleep": {
+          "mapValue": {
+            "fields": {
+              "interruptions": {
+                "integerValue": "2"
               },
-              "calories": {
-                "integerValue": "2200"
+              "quality": {
+                "stringValue": "fair"
+              },
+              "duration_hours": {
+                "integerValue": "7"
               }
             }
           }
@@ -815,20 +827,8 @@
             }
           }
         },
-        "activity": {
-          "mapValue": {
-            "fields": {
-              "active_minutes": {
-                "integerValue": "45"
-              },
-              "steps": {
-                "integerValue": "6000"
-              },
-              "sedentary_hours": {
-                "doubleValue": 9.5
-              }
-            }
-          }
+        "date": {
+          "stringValue": "2025-03-29"
         }
       },
       "createTime": "2025-03-27T11:43:39.925877Z",
@@ -837,11 +837,29 @@
     {
       "name": "projects/rn-firebase-ml-test/databases/(default)/documents/patientData/FlU19iteM3babjwgjDoJ",
       "fields": {
+        "activity": {
+          "mapValue": {
+            "fields": {
+              "active_minutes": {
+                "integerValue": "20"
+              },
+              "steps": {
+                "integerValue": "3200"
+              },
+              "sedentary_hours": {
+                "doubleValue": 12.5
+              }
+            }
+          }
+        },
         "nutrition": {
           "mapValue": {
             "fields": {
               "water_oz": {
                 "integerValue": "35"
+              },
+              "calories": {
+                "integerValue": "2500"
               },
               "macros": {
                 "mapValue": {
@@ -849,32 +867,14 @@
                     "carbs_g": {
                       "integerValue": "350"
                     },
-                    "fat_g": {
-                      "integerValue": "80"
-                    },
                     "protein_g": {
                       "integerValue": "70"
+                    },
+                    "fat_g": {
+                      "integerValue": "80"
                     }
                   }
                 }
-              },
-              "calories": {
-                "integerValue": "2500"
-              }
-            }
-          }
-        },
-        "sleep": {
-          "mapValue": {
-            "fields": {
-              "duration_hours": {
-                "doubleValue": 5.5
-              },
-              "interruptions": {
-                "integerValue": "4"
-              },
-              "quality": {
-                "stringValue": "poor"
               }
             }
           }
@@ -903,27 +903,6 @@
                   ]
                 }
               },
-              "temperature": {
-                "arrayValue": {
-                  "values": [
-                    {
-                      "doubleValue": 99.1
-                    },
-                    {
-                      "doubleValue": 98.9
-                    },
-                    {
-                      "doubleValue": 99.2
-                    },
-                    {
-                      "doubleValue": 98.8
-                    },
-                    {
-                      "integerValue": "99"
-                    }
-                  ]
-                }
-              },
               "heart_rate": {
                 "arrayValue": {
                   "values": [
@@ -947,21 +926,42 @@
                     }
                   ]
                 }
+              },
+              "temperature": {
+                "arrayValue": {
+                  "values": [
+                    {
+                      "doubleValue": 99.1
+                    },
+                    {
+                      "doubleValue": 98.9
+                    },
+                    {
+                      "doubleValue": 99.2
+                    },
+                    {
+                      "doubleValue": 98.8
+                    },
+                    {
+                      "integerValue": "99"
+                    }
+                  ]
+                }
               }
             }
           }
         },
-        "activity": {
+        "sleep": {
           "mapValue": {
             "fields": {
-              "sedentary_hours": {
-                "doubleValue": 12.5
+              "quality": {
+                "stringValue": "poor"
               },
-              "steps": {
-                "integerValue": "3200"
+              "interruptions": {
+                "integerValue": "4"
               },
-              "active_minutes": {
-                "integerValue": "20"
+              "duration_hours": {
+                "doubleValue": 5.5
               }
             }
           }
@@ -976,51 +976,6 @@
     {
       "name": "projects/rn-firebase-ml-test/databases/(default)/documents/patientData/MJw78N3qFu7z7IOSyqHT",
       "fields": {
-        "date": {
-          "stringValue": "2025-03-20"
-        },
-        "activity": {
-          "mapValue": {
-            "fields": {
-              "active_minutes": {
-                "integerValue": "50"
-              },
-              "sedentary_hours": {
-                "doubleValue": 8.5
-              },
-              "steps": {
-                "integerValue": "7800"
-              }
-            }
-          }
-        },
-        "nutrition": {
-          "mapValue": {
-            "fields": {
-              "water_oz": {
-                "integerValue": "58"
-              },
-              "macros": {
-                "mapValue": {
-                  "fields": {
-                    "fat_g": {
-                      "integerValue": "52"
-                    },
-                    "protein_g": {
-                      "integerValue": "98"
-                    },
-                    "carbs_g": {
-                      "integerValue": "230"
-                    }
-                  }
-                }
-              },
-              "calories": {
-                "integerValue": "1900"
-              }
-            }
-          }
-        },
         "vitals": {
           "mapValue": {
             "fields": {
@@ -1041,27 +996,6 @@
                     },
                     {
                       "stringValue": "119/80"
-                    }
-                  ]
-                }
-              },
-              "temperature": {
-                "arrayValue": {
-                  "values": [
-                    {
-                      "doubleValue": 98.5
-                    },
-                    {
-                      "doubleValue": 98.3
-                    },
-                    {
-                      "doubleValue": 98.4
-                    },
-                    {
-                      "doubleValue": 98.6
-                    },
-                    {
-                      "doubleValue": 98.5
                     }
                   ]
                 }
@@ -1089,6 +1023,69 @@
                     }
                   ]
                 }
+              },
+              "temperature": {
+                "arrayValue": {
+                  "values": [
+                    {
+                      "doubleValue": 98.5
+                    },
+                    {
+                      "doubleValue": 98.3
+                    },
+                    {
+                      "doubleValue": 98.4
+                    },
+                    {
+                      "doubleValue": 98.6
+                    },
+                    {
+                      "doubleValue": 98.5
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "activity": {
+          "mapValue": {
+            "fields": {
+              "sedentary_hours": {
+                "doubleValue": 8.5
+              },
+              "active_minutes": {
+                "integerValue": "50"
+              },
+              "steps": {
+                "integerValue": "7800"
+              }
+            }
+          }
+        },
+        "nutrition": {
+          "mapValue": {
+            "fields": {
+              "water_oz": {
+                "integerValue": "58"
+              },
+              "macros": {
+                "mapValue": {
+                  "fields": {
+                    "carbs_g": {
+                      "integerValue": "230"
+                    },
+                    "fat_g": {
+                      "integerValue": "52"
+                    },
+                    "protein_g": {
+                      "integerValue": "98"
+                    }
+                  }
+                }
+              },
+              "calories": {
+                "integerValue": "1900"
               }
             }
           }
@@ -1107,6 +1104,9 @@
               }
             }
           }
+        },
+        "date": {
+          "stringValue": "2025-03-20"
         }
       },
       "createTime": "2025-03-27T11:43:39.925877Z",
@@ -1115,32 +1115,8 @@
     {
       "name": "projects/rn-firebase-ml-test/databases/(default)/documents/patientData/OVASut4vazhRswb4iIsY",
       "fields": {
-        "nutrition": {
-          "mapValue": {
-            "fields": {
-              "water_oz": {
-                "integerValue": "75"
-              },
-              "macros": {
-                "mapValue": {
-                  "fields": {
-                    "fat_g": {
-                      "integerValue": "45"
-                    },
-                    "carbs_g": {
-                      "integerValue": "210"
-                    },
-                    "protein_g": {
-                      "integerValue": "115"
-                    }
-                  }
-                }
-              },
-              "calories": {
-                "integerValue": "1800"
-              }
-            }
-          }
+        "date": {
+          "stringValue": "2025-03-27"
         },
         "sleep": {
           "mapValue": {
@@ -1148,11 +1124,11 @@
               "duration_hours": {
                 "doubleValue": 8.7
               },
-              "interruptions": {
-                "integerValue": "1"
-              },
               "quality": {
                 "stringValue": "good"
+              },
+              "interruptions": {
+                "integerValue": "1"
               }
             }
           }
@@ -1160,24 +1136,42 @@
         "activity": {
           "mapValue": {
             "fields": {
+              "active_minutes": {
+                "integerValue": "80"
+              },
               "steps": {
                 "integerValue": "11200"
               },
               "sedentary_hours": {
                 "doubleValue": 6.2
-              },
-              "active_minutes": {
-                "integerValue": "80"
               }
             }
           }
         },
-        "date": {
-          "stringValue": "2025-03-27"
-        },
         "vitals": {
           "mapValue": {
             "fields": {
+              "blood_pressure": {
+                "arrayValue": {
+                  "values": [
+                    {
+                      "stringValue": "108/68"
+                    },
+                    {
+                      "stringValue": "110/70"
+                    },
+                    {
+                      "stringValue": "107/67"
+                    },
+                    {
+                      "stringValue": "109/69"
+                    },
+                    {
+                      "stringValue": "111/71"
+                    }
+                  ]
+                }
+              },
               "temperature": {
                 "arrayValue": {
                   "values": [
@@ -1222,26 +1216,32 @@
                     }
                   ]
                 }
+              }
+            }
+          }
+        },
+        "nutrition": {
+          "mapValue": {
+            "fields": {
+              "calories": {
+                "integerValue": "1800"
               },
-              "blood_pressure": {
-                "arrayValue": {
-                  "values": [
-                    {
-                      "stringValue": "108/68"
+              "water_oz": {
+                "integerValue": "75"
+              },
+              "macros": {
+                "mapValue": {
+                  "fields": {
+                    "carbs_g": {
+                      "integerValue": "210"
                     },
-                    {
-                      "stringValue": "110/70"
+                    "fat_g": {
+                      "integerValue": "45"
                     },
-                    {
-                      "stringValue": "107/67"
-                    },
-                    {
-                      "stringValue": "109/69"
-                    },
-                    {
-                      "stringValue": "111/71"
+                    "protein_g": {
+                      "integerValue": "115"
                     }
-                  ]
+                  }
                 }
               }
             }
@@ -1254,23 +1254,47 @@
     {
       "name": "projects/rn-firebase-ml-test/databases/(default)/documents/patientData/PGzZQmzW5dNLFqaIvZMk",
       "fields": {
+        "nutrition": {
+          "mapValue": {
+            "fields": {
+              "water_oz": {
+                "integerValue": "58"
+              },
+              "macros": {
+                "mapValue": {
+                  "fields": {
+                    "fat_g": {
+                      "integerValue": "52"
+                    },
+                    "protein_g": {
+                      "integerValue": "98"
+                    },
+                    "carbs_g": {
+                      "integerValue": "230"
+                    }
+                  }
+                }
+              },
+              "calories": {
+                "integerValue": "1900"
+              }
+            }
+          }
+        },
         "sleep": {
           "mapValue": {
             "fields": {
-              "duration_hours": {
-                "doubleValue": 7.8
-              },
               "interruptions": {
                 "integerValue": "1"
+              },
+              "duration_hours": {
+                "doubleValue": 7.8
               },
               "quality": {
                 "stringValue": "good"
               }
             }
           }
-        },
-        "date": {
-          "stringValue": "2025-03-20"
         },
         "vitals": {
           "mapValue": {
@@ -1350,41 +1374,17 @@
               "sedentary_hours": {
                 "doubleValue": 8.5
               },
-              "active_minutes": {
-                "integerValue": "50"
-              },
               "steps": {
                 "integerValue": "7800"
+              },
+              "active_minutes": {
+                "integerValue": "50"
               }
             }
           }
         },
-        "nutrition": {
-          "mapValue": {
-            "fields": {
-              "macros": {
-                "mapValue": {
-                  "fields": {
-                    "protein_g": {
-                      "integerValue": "98"
-                    },
-                    "carbs_g": {
-                      "integerValue": "230"
-                    },
-                    "fat_g": {
-                      "integerValue": "52"
-                    }
-                  }
-                }
-              },
-              "water_oz": {
-                "integerValue": "58"
-              },
-              "calories": {
-                "integerValue": "1900"
-              }
-            }
-          }
+        "date": {
+          "stringValue": "2025-03-20"
         }
       },
       "createTime": "2025-03-27T11:43:39.925877Z",
@@ -1396,30 +1396,6 @@
         "vitals": {
           "mapValue": {
             "fields": {
-              "heart_rate": {
-                "arrayValue": {
-                  "values": [
-                    {
-                      "integerValue": "70"
-                    },
-                    {
-                      "integerValue": "72"
-                    },
-                    {
-                      "integerValue": "69"
-                    },
-                    {
-                      "integerValue": "71"
-                    },
-                    {
-                      "integerValue": "73"
-                    },
-                    {
-                      "integerValue": "71"
-                    }
-                  ]
-                }
-              },
               "temperature": {
                 "arrayValue": {
                   "values": [
@@ -1461,6 +1437,45 @@
                     }
                   ]
                 }
+              },
+              "heart_rate": {
+                "arrayValue": {
+                  "values": [
+                    {
+                      "integerValue": "70"
+                    },
+                    {
+                      "integerValue": "72"
+                    },
+                    {
+                      "integerValue": "69"
+                    },
+                    {
+                      "integerValue": "71"
+                    },
+                    {
+                      "integerValue": "73"
+                    },
+                    {
+                      "integerValue": "71"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "activity": {
+          "mapValue": {
+            "fields": {
+              "sedentary_hours": {
+                "doubleValue": 7.8
+              },
+              "steps": {
+                "integerValue": "9500"
+              },
+              "active_minutes": {
+                "integerValue": "62"
               }
             }
           }
@@ -1468,6 +1483,12 @@
         "nutrition": {
           "mapValue": {
             "fields": {
+              "calories": {
+                "integerValue": "1950"
+              },
+              "water_oz": {
+                "integerValue": "65"
+              },
               "macros": {
                 "mapValue": {
                   "fields": {
@@ -1482,27 +1503,6 @@
                     }
                   }
                 }
-              },
-              "calories": {
-                "integerValue": "1950"
-              },
-              "water_oz": {
-                "integerValue": "65"
-              }
-            }
-          }
-        },
-        "activity": {
-          "mapValue": {
-            "fields": {
-              "active_minutes": {
-                "integerValue": "62"
-              },
-              "steps": {
-                "integerValue": "9500"
-              },
-              "sedentary_hours": {
-                "doubleValue": 7.8
               }
             }
           }
@@ -1510,14 +1510,14 @@
         "sleep": {
           "mapValue": {
             "fields": {
-              "quality": {
-                "stringValue": "good"
-              },
               "interruptions": {
                 "integerValue": "1"
               },
               "duration_hours": {
                 "doubleValue": 7.5
+              },
+              "quality": {
+                "stringValue": "good"
               }
             }
           }
@@ -1532,20 +1532,44 @@
     {
       "name": "projects/rn-firebase-ml-test/databases/(default)/documents/patientData/WYt1oqp2DBrWQiQ0eHar",
       "fields": {
-        "date": {
-          "stringValue": "2025-03-25"
-        },
-        "sleep": {
+        "activity": {
           "mapValue": {
             "fields": {
-              "quality": {
-                "stringValue": "fair"
+              "steps": {
+                "integerValue": "4500"
               },
-              "interruptions": {
-                "integerValue": "3"
+              "active_minutes": {
+                "integerValue": "30"
               },
-              "duration_hours": {
-                "doubleValue": 6.2
+              "sedentary_hours": {
+                "doubleValue": 11.3
+              }
+            }
+          }
+        },
+        "nutrition": {
+          "mapValue": {
+            "fields": {
+              "macros": {
+                "mapValue": {
+                  "fields": {
+                    "fat_g": {
+                      "integerValue": "75"
+                    },
+                    "protein_g": {
+                      "integerValue": "75"
+                    },
+                    "carbs_g": {
+                      "integerValue": "320"
+                    }
+                  }
+                }
+              },
+              "calories": {
+                "integerValue": "2300"
+              },
+              "water_oz": {
+                "integerValue": "40"
               }
             }
           }
@@ -1553,30 +1577,6 @@
         "vitals": {
           "mapValue": {
             "fields": {
-              "heart_rate": {
-                "arrayValue": {
-                  "values": [
-                    {
-                      "integerValue": "76"
-                    },
-                    {
-                      "integerValue": "79"
-                    },
-                    {
-                      "integerValue": "77"
-                    },
-                    {
-                      "integerValue": "78"
-                    },
-                    {
-                      "integerValue": "80"
-                    },
-                    {
-                      "integerValue": "75"
-                    }
-                  ]
-                }
-              },
               "temperature": {
                 "arrayValue": {
                   "values": [
@@ -1618,48 +1618,48 @@
                     }
                   ]
                 }
-              }
-            }
-          }
-        },
-        "activity": {
-          "mapValue": {
-            "fields": {
-              "steps": {
-                "integerValue": "4500"
               },
-              "sedentary_hours": {
-                "doubleValue": 11.3
-              },
-              "active_minutes": {
-                "integerValue": "30"
-              }
-            }
-          }
-        },
-        "nutrition": {
-          "mapValue": {
-            "fields": {
-              "calories": {
-                "integerValue": "2300"
-              },
-              "water_oz": {
-                "integerValue": "40"
-              },
-              "macros": {
-                "mapValue": {
-                  "fields": {
-                    "protein_g": {
-                      "integerValue": "75"
+              "heart_rate": {
+                "arrayValue": {
+                  "values": [
+                    {
+                      "integerValue": "76"
                     },
-                    "fat_g": {
-                      "integerValue": "75"
+                    {
+                      "integerValue": "79"
                     },
-                    "carbs_g": {
-                      "integerValue": "320"
+                    {
+                      "integerValue": "77"
+                    },
+                    {
+                      "integerValue": "78"
+                    },
+                    {
+                      "integerValue": "80"
+                    },
+                    {
+                      "integerValue": "75"
                     }
-                  }
+                  ]
                 }
+              }
+            }
+          }
+        },
+        "date": {
+          "stringValue": "2025-03-25"
+        },
+        "sleep": {
+          "mapValue": {
+            "fields": {
+              "interruptions": {
+                "integerValue": "3"
+              },
+              "duration_hours": {
+                "doubleValue": 6.2
+              },
+              "quality": {
+                "stringValue": "fair"
               }
             }
           }
@@ -1671,30 +1671,27 @@
     {
       "name": "projects/rn-firebase-ml-test/databases/(default)/documents/patientData/Wi5eRimDDxLW31dIlUxH",
       "fields": {
+        "date": {
+          "stringValue": "2025-03-26"
+        },
+        "activity": {
+          "mapValue": {
+            "fields": {
+              "active_minutes": {
+                "integerValue": "75"
+              },
+              "sedentary_hours": {
+                "doubleValue": 6.5
+              },
+              "steps": {
+                "integerValue": "10000"
+              }
+            }
+          }
+        },
         "vitals": {
           "mapValue": {
             "fields": {
-              "temperature": {
-                "arrayValue": {
-                  "values": [
-                    {
-                      "doubleValue": 98.2
-                    },
-                    {
-                      "integerValue": "98"
-                    },
-                    {
-                      "doubleValue": 98.3
-                    },
-                    {
-                      "doubleValue": 98.1
-                    },
-                    {
-                      "doubleValue": 98.4
-                    }
-                  ]
-                }
-              },
               "heart_rate": {
                 "arrayValue": {
                   "values": [
@@ -1739,50 +1736,26 @@
                     }
                   ]
                 }
-              }
-            }
-          }
-        },
-        "activity": {
-          "mapValue": {
-            "fields": {
-              "steps": {
-                "integerValue": "10000"
               },
-              "sedentary_hours": {
-                "doubleValue": 6.5
-              },
-              "active_minutes": {
-                "integerValue": "75"
-              }
-            }
-          }
-        },
-        "date": {
-          "stringValue": "2025-03-26"
-        },
-        "nutrition": {
-          "mapValue": {
-            "fields": {
-              "water_oz": {
-                "integerValue": "70"
-              },
-              "calories": {
-                "integerValue": "1700"
-              },
-              "macros": {
-                "mapValue": {
-                  "fields": {
-                    "carbs_g": {
-                      "integerValue": "200"
+              "temperature": {
+                "arrayValue": {
+                  "values": [
+                    {
+                      "doubleValue": 98.2
                     },
-                    "fat_g": {
-                      "integerValue": "40"
+                    {
+                      "integerValue": "98"
                     },
-                    "protein_g": {
-                      "integerValue": "110"
+                    {
+                      "doubleValue": 98.3
+                    },
+                    {
+                      "doubleValue": 98.1
+                    },
+                    {
+                      "doubleValue": 98.4
                     }
-                  }
+                  ]
                 }
               }
             }
@@ -1794,11 +1767,38 @@
               "quality": {
                 "stringValue": "excellent"
               },
-              "duration_hours": {
-                "integerValue": "9"
-              },
               "interruptions": {
                 "integerValue": "0"
+              },
+              "duration_hours": {
+                "integerValue": "9"
+              }
+            }
+          }
+        },
+        "nutrition": {
+          "mapValue": {
+            "fields": {
+              "calories": {
+                "integerValue": "1700"
+              },
+              "water_oz": {
+                "integerValue": "70"
+              },
+              "macros": {
+                "mapValue": {
+                  "fields": {
+                    "fat_g": {
+                      "integerValue": "40"
+                    },
+                    "protein_g": {
+                      "integerValue": "110"
+                    },
+                    "carbs_g": {
+                      "integerValue": "200"
+                    }
+                  }
+                }
               }
             }
           }
@@ -1810,29 +1810,71 @@
     {
       "name": "projects/rn-firebase-ml-test/databases/(default)/documents/patientData/YCXfq6bv4OojzI2DBQoE",
       "fields": {
+        "nutrition": {
+          "mapValue": {
+            "fields": {
+              "water_oz": {
+                "integerValue": "60"
+              },
+              "macros": {
+                "mapValue": {
+                  "fields": {
+                    "fat_g": {
+                      "integerValue": "50"
+                    },
+                    "carbs_g": {
+                      "integerValue": "220"
+                    },
+                    "protein_g": {
+                      "integerValue": "100"
+                    }
+                  }
+                }
+              },
+              "calories": {
+                "integerValue": "1850"
+              }
+            }
+          }
+        },
+        "activity": {
+          "mapValue": {
+            "fields": {
+              "steps": {
+                "integerValue": "8200"
+              },
+              "sedentary_hours": {
+                "doubleValue": 8.2
+              },
+              "active_minutes": {
+                "integerValue": "55"
+              }
+            }
+          }
+        },
+        "date": {
+          "stringValue": "2025-03-19"
+        },
         "vitals": {
           "mapValue": {
             "fields": {
-              "heart_rate": {
+              "blood_pressure": {
                 "arrayValue": {
                   "values": [
                     {
-                      "integerValue": "65"
+                      "stringValue": "115/76"
                     },
                     {
-                      "integerValue": "67"
+                      "stringValue": "117/78"
                     },
                     {
-                      "integerValue": "64"
+                      "stringValue": "114/75"
                     },
                     {
-                      "integerValue": "66"
+                      "stringValue": "116/77"
                     },
                     {
-                      "integerValue": "68"
-                    },
-                    {
-                      "integerValue": "67"
+                      "stringValue": "118/79"
                     }
                   ]
                 }
@@ -1858,23 +1900,26 @@
                   ]
                 }
               },
-              "blood_pressure": {
+              "heart_rate": {
                 "arrayValue": {
                   "values": [
                     {
-                      "stringValue": "115/76"
+                      "integerValue": "65"
                     },
                     {
-                      "stringValue": "117/78"
+                      "integerValue": "67"
                     },
                     {
-                      "stringValue": "114/75"
+                      "integerValue": "64"
                     },
                     {
-                      "stringValue": "116/77"
+                      "integerValue": "66"
                     },
                     {
-                      "stringValue": "118/79"
+                      "integerValue": "68"
+                    },
+                    {
+                      "integerValue": "67"
                     }
                   ]
                 }
@@ -1882,62 +1927,17 @@
             }
           }
         },
-        "nutrition": {
-          "mapValue": {
-            "fields": {
-              "water_oz": {
-                "integerValue": "60"
-              },
-              "macros": {
-                "mapValue": {
-                  "fields": {
-                    "protein_g": {
-                      "integerValue": "100"
-                    },
-                    "fat_g": {
-                      "integerValue": "50"
-                    },
-                    "carbs_g": {
-                      "integerValue": "220"
-                    }
-                  }
-                }
-              },
-              "calories": {
-                "integerValue": "1850"
-              }
-            }
-          }
-        },
-        "date": {
-          "stringValue": "2025-03-19"
-        },
         "sleep": {
           "mapValue": {
             "fields": {
               "quality": {
                 "stringValue": "good"
               },
-              "interruptions": {
-                "integerValue": "1"
-              },
               "duration_hours": {
                 "doubleValue": 8.1
-              }
-            }
-          }
-        },
-        "activity": {
-          "mapValue": {
-            "fields": {
-              "steps": {
-                "integerValue": "8200"
               },
-              "active_minutes": {
-                "integerValue": "55"
-              },
-              "sedentary_hours": {
-                "doubleValue": 8.2
+              "interruptions": {
+                "integerValue": "1"
               }
             }
           }
@@ -1952,80 +1952,41 @@
         "sleep": {
           "mapValue": {
             "fields": {
-              "quality": {
-                "stringValue": "poor"
+              "interruptions": {
+                "integerValue": "3"
               },
               "duration_hours": {
                 "doubleValue": 6.5
               },
-              "interruptions": {
-                "integerValue": "3"
+              "quality": {
+                "stringValue": "poor"
               }
             }
           }
         },
-        "nutrition": {
-          "mapValue": {
-            "fields": {
-              "water_oz": {
-                "integerValue": "45"
-              },
-              "calories": {
-                "integerValue": "2200"
-              },
-              "macros": {
-                "mapValue": {
-                  "fields": {
-                    "fat_g": {
-                      "integerValue": "60"
-                    },
-                    "carbs_g": {
-                      "integerValue": "290"
-                    },
-                    "protein_g": {
-                      "integerValue": "85"
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        "activity": {
-          "mapValue": {
-            "fields": {
-              "steps": {
-                "integerValue": "4500"
-              },
-              "sedentary_hours": {
-                "doubleValue": 10.5
-              },
-              "active_minutes": {
-                "integerValue": "35"
-              }
-            }
-          }
+        "date": {
+          "stringValue": "2025-03-17"
         },
         "vitals": {
           "mapValue": {
             "fields": {
-              "temperature": {
+              "blood_pressure": {
                 "arrayValue": {
                   "values": [
                     {
-                      "doubleValue": 98.6
+                      "stringValue": "120/80"
                     },
                     {
-                      "doubleValue": 98.4
+                      "stringValue": "122/82"
                     },
                     {
-                      "doubleValue": 98.7
+                      "stringValue": "118/79"
                     },
                     {
-                      "doubleValue": 98.5
+                      "stringValue": "121/81"
                     },
                     {
-                      "doubleValue": 98.8
+                      "stringValue": "125/83"
                     }
                   ]
                 }
@@ -2054,23 +2015,23 @@
                   ]
                 }
               },
-              "blood_pressure": {
+              "temperature": {
                 "arrayValue": {
                   "values": [
                     {
-                      "stringValue": "120/80"
+                      "doubleValue": 98.6
                     },
                     {
-                      "stringValue": "122/82"
+                      "doubleValue": 98.4
                     },
                     {
-                      "stringValue": "118/79"
+                      "doubleValue": 98.7
                     },
                     {
-                      "stringValue": "121/81"
+                      "doubleValue": 98.5
                     },
                     {
-                      "stringValue": "125/83"
+                      "doubleValue": 98.8
                     }
                   ]
                 }
@@ -2078,8 +2039,47 @@
             }
           }
         },
-        "date": {
-          "stringValue": "2025-03-17"
+        "nutrition": {
+          "mapValue": {
+            "fields": {
+              "calories": {
+                "integerValue": "2200"
+              },
+              "water_oz": {
+                "integerValue": "45"
+              },
+              "macros": {
+                "mapValue": {
+                  "fields": {
+                    "carbs_g": {
+                      "integerValue": "290"
+                    },
+                    "fat_g": {
+                      "integerValue": "60"
+                    },
+                    "protein_g": {
+                      "integerValue": "85"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "activity": {
+          "mapValue": {
+            "fields": {
+              "steps": {
+                "integerValue": "4500"
+              },
+              "active_minutes": {
+                "integerValue": "35"
+              },
+              "sedentary_hours": {
+                "doubleValue": 10.5
+              }
+            }
+          }
         }
       },
       "createTime": "2025-03-27T11:43:39.925877Z",
@@ -2088,24 +2088,33 @@
     {
       "name": "projects/rn-firebase-ml-test/databases/(default)/documents/patientData/eIGtVsnM4KR33Xd9bnhK",
       "fields": {
-        "sleep": {
-          "mapValue": {
-            "fields": {
-              "quality": {
-                "stringValue": "fair"
-              },
-              "duration_hours": {
-                "doubleValue": 7.2
-              },
-              "interruptions": {
-                "integerValue": "2"
-              }
-            }
-          }
+        "date": {
+          "stringValue": "2025-03-18"
         },
         "vitals": {
           "mapValue": {
             "fields": {
+              "temperature": {
+                "arrayValue": {
+                  "values": [
+                    {
+                      "doubleValue": 98.5
+                    },
+                    {
+                      "doubleValue": 98.3
+                    },
+                    {
+                      "doubleValue": 98.4
+                    },
+                    {
+                      "doubleValue": 98.6
+                    },
+                    {
+                      "doubleValue": 98.5
+                    }
+                  ]
+                }
+              },
               "heart_rate": {
                 "arrayValue": {
                   "values": [
@@ -2150,42 +2159,6 @@
                     }
                   ]
                 }
-              },
-              "temperature": {
-                "arrayValue": {
-                  "values": [
-                    {
-                      "doubleValue": 98.5
-                    },
-                    {
-                      "doubleValue": 98.3
-                    },
-                    {
-                      "doubleValue": 98.4
-                    },
-                    {
-                      "doubleValue": 98.6
-                    },
-                    {
-                      "doubleValue": 98.5
-                    }
-                  ]
-                }
-              }
-            }
-          }
-        },
-        "activity": {
-          "mapValue": {
-            "fields": {
-              "sedentary_hours": {
-                "doubleValue": 9.8
-              },
-              "steps": {
-                "integerValue": "6700"
-              },
-              "active_minutes": {
-                "integerValue": "42"
               }
             }
           }
@@ -2193,32 +2166,59 @@
         "nutrition": {
           "mapValue": {
             "fields": {
-              "water_oz": {
-                "integerValue": "52"
-              },
-              "calories": {
-                "integerValue": "1950"
-              },
               "macros": {
                 "mapValue": {
                   "fields": {
-                    "fat_g": {
-                      "integerValue": "55"
-                    },
                     "carbs_g": {
                       "integerValue": "240"
+                    },
+                    "fat_g": {
+                      "integerValue": "55"
                     },
                     "protein_g": {
                       "integerValue": "95"
                     }
                   }
                 }
+              },
+              "water_oz": {
+                "integerValue": "52"
+              },
+              "calories": {
+                "integerValue": "1950"
               }
             }
           }
         },
-        "date": {
-          "stringValue": "2025-03-18"
+        "activity": {
+          "mapValue": {
+            "fields": {
+              "active_minutes": {
+                "integerValue": "42"
+              },
+              "steps": {
+                "integerValue": "6700"
+              },
+              "sedentary_hours": {
+                "doubleValue": 9.8
+              }
+            }
+          }
+        },
+        "sleep": {
+          "mapValue": {
+            "fields": {
+              "quality": {
+                "stringValue": "fair"
+              },
+              "duration_hours": {
+                "doubleValue": 7.2
+              },
+              "interruptions": {
+                "integerValue": "2"
+              }
+            }
+          }
         }
       },
       "createTime": "2025-03-27T11:43:39.925877Z",
@@ -2227,23 +2227,23 @@
     {
       "name": "projects/rn-firebase-ml-test/databases/(default)/documents/patientData/hFfmeN0J5p7u7RwMd03D",
       "fields": {
+        "date": {
+          "stringValue": "2025-03-22"
+        },
         "activity": {
           "mapValue": {
             "fields": {
-              "steps": {
-                "integerValue": "3000"
+              "sedentary_hours": {
+                "doubleValue": 11.2
               },
               "active_minutes": {
                 "integerValue": "25"
               },
-              "sedentary_hours": {
-                "doubleValue": 11.2
+              "steps": {
+                "integerValue": "3000"
               }
             }
           }
-        },
-        "date": {
-          "stringValue": "2025-03-22"
         },
         "nutrition": {
           "mapValue": {
@@ -2268,6 +2268,21 @@
               },
               "water_oz": {
                 "integerValue": "42"
+              }
+            }
+          }
+        },
+        "sleep": {
+          "mapValue": {
+            "fields": {
+              "duration_hours": {
+                "doubleValue": 8.5
+              },
+              "quality": {
+                "stringValue": "excellent"
+              },
+              "interruptions": {
+                "integerValue": "0"
               }
             }
           }
@@ -2340,21 +2355,6 @@
                     }
                   ]
                 }
-              }
-            }
-          }
-        },
-        "sleep": {
-          "mapValue": {
-            "fields": {
-              "duration_hours": {
-                "doubleValue": 8.5
-              },
-              "quality": {
-                "stringValue": "excellent"
-              },
-              "interruptions": {
-                "integerValue": "0"
               }
             }
           }
@@ -2369,44 +2369,44 @@
         "date": {
           "stringValue": "2025-03-18"
         },
-        "sleep": {
-          "mapValue": {
-            "fields": {
-              "duration_hours": {
-                "doubleValue": 7.2
-              },
-              "interruptions": {
-                "integerValue": "2"
-              },
-              "quality": {
-                "stringValue": "fair"
-              }
-            }
-          }
-        },
         "nutrition": {
           "mapValue": {
             "fields": {
-              "calories": {
-                "integerValue": "1950"
-              },
-              "water_oz": {
-                "integerValue": "52"
-              },
               "macros": {
                 "mapValue": {
                   "fields": {
-                    "carbs_g": {
-                      "integerValue": "240"
-                    },
                     "protein_g": {
                       "integerValue": "95"
+                    },
+                    "carbs_g": {
+                      "integerValue": "240"
                     },
                     "fat_g": {
                       "integerValue": "55"
                     }
                   }
                 }
+              },
+              "water_oz": {
+                "integerValue": "52"
+              },
+              "calories": {
+                "integerValue": "1950"
+              }
+            }
+          }
+        },
+        "sleep": {
+          "mapValue": {
+            "fields": {
+              "quality": {
+                "stringValue": "fair"
+              },
+              "interruptions": {
+                "integerValue": "2"
+              },
+              "duration_hours": {
+                "doubleValue": 7.2
               }
             }
           }
@@ -2414,27 +2414,6 @@
         "vitals": {
           "mapValue": {
             "fields": {
-              "temperature": {
-                "arrayValue": {
-                  "values": [
-                    {
-                      "doubleValue": 98.5
-                    },
-                    {
-                      "doubleValue": 98.3
-                    },
-                    {
-                      "doubleValue": 98.4
-                    },
-                    {
-                      "doubleValue": 98.6
-                    },
-                    {
-                      "doubleValue": 98.5
-                    }
-                  ]
-                }
-              },
               "heart_rate": {
                 "arrayValue": {
                   "values": [
@@ -2479,6 +2458,27 @@
                     }
                   ]
                 }
+              },
+              "temperature": {
+                "arrayValue": {
+                  "values": [
+                    {
+                      "doubleValue": 98.5
+                    },
+                    {
+                      "doubleValue": 98.3
+                    },
+                    {
+                      "doubleValue": 98.4
+                    },
+                    {
+                      "doubleValue": 98.6
+                    },
+                    {
+                      "doubleValue": 98.5
+                    }
+                  ]
+                }
               }
             }
           }
@@ -2486,14 +2486,14 @@
         "activity": {
           "mapValue": {
             "fields": {
-              "active_minutes": {
-                "integerValue": "42"
-              },
               "sedentary_hours": {
                 "doubleValue": 9.8
               },
               "steps": {
                 "integerValue": "6700"
+              },
+              "active_minutes": {
+                "integerValue": "42"
               }
             }
           }
@@ -2508,14 +2508,14 @@
         "sleep": {
           "mapValue": {
             "fields": {
+              "interruptions": {
+                "integerValue": "0"
+              },
               "duration_hours": {
                 "doubleValue": 8.5
               },
               "quality": {
                 "stringValue": "excellent"
-              },
-              "interruptions": {
-                "integerValue": "0"
               }
             }
           }
@@ -2523,27 +2523,6 @@
         "vitals": {
           "mapValue": {
             "fields": {
-              "blood_pressure": {
-                "arrayValue": {
-                  "values": [
-                    {
-                      "stringValue": "117/78"
-                    },
-                    {
-                      "stringValue": "119/80"
-                    },
-                    {
-                      "stringValue": "116/77"
-                    },
-                    {
-                      "stringValue": "118/79"
-                    },
-                    {
-                      "stringValue": "120/81"
-                    }
-                  ]
-                }
-              },
               "temperature": {
                 "arrayValue": {
                   "values": [
@@ -2588,21 +2567,27 @@
                     }
                   ]
                 }
-              }
-            }
-          }
-        },
-        "activity": {
-          "mapValue": {
-            "fields": {
-              "active_minutes": {
-                "integerValue": "25"
               },
-              "sedentary_hours": {
-                "doubleValue": 11.2
-              },
-              "steps": {
-                "integerValue": "3000"
+              "blood_pressure": {
+                "arrayValue": {
+                  "values": [
+                    {
+                      "stringValue": "117/78"
+                    },
+                    {
+                      "stringValue": "119/80"
+                    },
+                    {
+                      "stringValue": "116/77"
+                    },
+                    {
+                      "stringValue": "118/79"
+                    },
+                    {
+                      "stringValue": "120/81"
+                    }
+                  ]
+                }
               }
             }
           }
@@ -2616,11 +2601,11 @@
               "macros": {
                 "mapValue": {
                   "fields": {
-                    "protein_g": {
-                      "integerValue": "80"
-                    },
                     "carbs_g": {
                       "integerValue": "310"
+                    },
+                    "protein_g": {
+                      "integerValue": "80"
                     },
                     "fat_g": {
                       "integerValue": "65"
@@ -2636,6 +2621,21 @@
         },
         "date": {
           "stringValue": "2025-03-22"
+        },
+        "activity": {
+          "mapValue": {
+            "fields": {
+              "sedentary_hours": {
+                "doubleValue": 11.2
+              },
+              "steps": {
+                "integerValue": "3000"
+              },
+              "active_minutes": {
+                "integerValue": "25"
+              }
+            }
+          }
         }
       },
       "createTime": "2025-03-27T11:43:39.925877Z",
@@ -2644,36 +2644,30 @@
     {
       "name": "projects/rn-firebase-ml-test/databases/(default)/documents/patientData/y3WhQYVT95G9ssPMlxjh",
       "fields": {
-        "nutrition": {
-          "mapValue": {
-            "fields": {
-              "water_oz": {
-                "integerValue": "65"
-              },
-              "macros": {
-                "mapValue": {
-                  "fields": {
-                    "protein_g": {
-                      "integerValue": "105"
-                    },
-                    "fat_g": {
-                      "integerValue": "53"
-                    },
-                    "carbs_g": {
-                      "integerValue": "235"
-                    }
-                  }
-                }
-              },
-              "calories": {
-                "integerValue": "1950"
-              }
-            }
-          }
-        },
         "vitals": {
           "mapValue": {
             "fields": {
+              "blood_pressure": {
+                "arrayValue": {
+                  "values": [
+                    {
+                      "stringValue": "118/79"
+                    },
+                    {
+                      "stringValue": "120/81"
+                    },
+                    {
+                      "stringValue": "117/78"
+                    },
+                    {
+                      "stringValue": "119/80"
+                    },
+                    {
+                      "stringValue": "121/82"
+                    }
+                  ]
+                }
+              },
               "heart_rate": {
                 "arrayValue": {
                   "values": [
@@ -2694,27 +2688,6 @@
                     },
                     {
                       "integerValue": "71"
-                    }
-                  ]
-                }
-              },
-              "blood_pressure": {
-                "arrayValue": {
-                  "values": [
-                    {
-                      "stringValue": "118/79"
-                    },
-                    {
-                      "stringValue": "120/81"
-                    },
-                    {
-                      "stringValue": "117/78"
-                    },
-                    {
-                      "stringValue": "119/80"
-                    },
-                    {
-                      "stringValue": "121/82"
                     }
                   ]
                 }
@@ -2743,24 +2716,6 @@
             }
           }
         },
-        "activity": {
-          "mapValue": {
-            "fields": {
-              "sedentary_hours": {
-                "doubleValue": 7.8
-              },
-              "steps": {
-                "integerValue": "9500"
-              },
-              "active_minutes": {
-                "integerValue": "62"
-              }
-            }
-          }
-        },
-        "date": {
-          "stringValue": "2025-03-23"
-        },
         "sleep": {
           "mapValue": {
             "fields": {
@@ -2775,6 +2730,51 @@
               }
             }
           }
+        },
+        "activity": {
+          "mapValue": {
+            "fields": {
+              "steps": {
+                "integerValue": "9500"
+              },
+              "active_minutes": {
+                "integerValue": "62"
+              },
+              "sedentary_hours": {
+                "doubleValue": 7.8
+              }
+            }
+          }
+        },
+        "nutrition": {
+          "mapValue": {
+            "fields": {
+              "calories": {
+                "integerValue": "1950"
+              },
+              "water_oz": {
+                "integerValue": "65"
+              },
+              "macros": {
+                "mapValue": {
+                  "fields": {
+                    "protein_g": {
+                      "integerValue": "105"
+                    },
+                    "fat_g": {
+                      "integerValue": "53"
+                    },
+                    "carbs_g": {
+                      "integerValue": "235"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "date": {
+          "stringValue": "2025-03-23"
         }
       },
       "createTime": "2025-03-27T11:43:39.925877Z",
