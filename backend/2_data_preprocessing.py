@@ -31,19 +31,24 @@ flat_records = []
 for doc in records:
     fields = doc["fields"]
     flat = {k: extract_value(v) for k, v in fields.items()}
-    
-    #Flattening fields within sleep 
+
+    #Adding first level fields - metadata 
+    flat["name"] = doc.get("name", "")
+    flat["create_time"] = doc.get("createTime", "")
+    flat["update_time"] = doc.get("updateTime", "")
+
+    #Flattening fields within sleep
     sleep = flat.pop("sleep", {})
     if isinstance(sleep, dict):
         for k, v in sleep.items():
             flat[f"sleep_{k}"] = v
-    
-    #Flattening fields within activity 
+
+    #Flattening fields within activity
     activity = flat.pop("activity", {})
     if isinstance(activity, dict):
         for k, v in activity.items():
             flat[f"activity_{k}"] = v
-    
+
     #Flattening fields within nutrition
     nutrition = flat.pop("nutrition", {})
     if isinstance(nutrition, dict):
@@ -59,7 +64,7 @@ for doc in records:
     heart_rate = vitals.get("heart_rate", [])
     bp = vitals.get("blood_pressure", [])
     temp = vitals.get("temperature", [])
-    
+
     #Flattening fields within vitals
     flat["vitals_heart_rate_mean"] = heart_rate
     flat["vitals_bp_latest"] = bp
