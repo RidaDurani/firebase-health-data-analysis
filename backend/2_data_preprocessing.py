@@ -106,11 +106,11 @@ proccessed_df.drop(columns=['date','ID','name','create_time','update_time','vita
 
 #Calculating average of heart rate
 heart_rate_cols = [col for col in proccessed_df.columns if col.startswith("vitals_heart_rate")]
-proccessed_df["avg_heart_rate"] = proccessed_df[heart_rate_cols].mean(axis=1)
+proccessed_df["avg_heart_rate"] = proccessed_df[heart_rate_cols].mean(axis=1).round(2)
 
 #Calculating average temperature
 temp_cols = [col for col in proccessed_df.columns if col.startswith("vitals_temp")]
-proccessed_df["avg_temperature"] = proccessed_df[temp_cols].mean(axis=1)
+proccessed_df["avg_temperature"] = proccessed_df[temp_cols].mean(axis=1).round(2)
 
 #Calculating average of bp
 #Converting BP columns as spliting systolic/diastolic into separate columns
@@ -122,10 +122,33 @@ for i, col in enumerate(bp_cols):
 #Average systolic and diastolic separately
 sys_cols = [col for col in proccessed_df.columns if col.startswith("bp_sys_")]
 dia_cols = [col for col in proccessed_df.columns if col.startswith("bp_dia_")]
-proccessed_df["avg_systolic_bp"] = proccessed_df[sys_cols].mean(axis=1)
-proccessed_df["avg_diastolic_bp"] = proccessed_df[dia_cols].mean(axis=1)
-# Combineing the two average BP values into one column as "systolic/diastolic"
+proccessed_df["avg_systolic_bp"] = proccessed_df[sys_cols].mean(axis=1).round(2)
+proccessed_df["avg_diastolic_bp"] = proccessed_df[dia_cols].mean(axis=1).round(2)
+#Combineing the two average BP values into one column as "systolic/diastolic"
 proccessed_df["avg_bp"] = proccessed_df["avg_systolic_bp"].round(1).astype(str) + "/" + proccessed_df["avg_diastolic_bp"].round(1).astype(str)
+
+#Selected Columns for more cleaned df
+selected_columns = [
+    "sleep_duration_hours",
+    "sleep_quality",
+    "sleep_interruptions",
+    "activity_sedentary_hours",
+    "activity_active_minutes",
+    "activity_steps",
+    "nutrition_calories",
+    "nutrition_water_oz",
+    "nutrition_macro_fat_g",
+    "nutrition_macro_carbs_g",
+    "nutrition_macro_protein_g",
+    "avg_heart_rate",
+    "avg_temperature",
+    "avg_systolic_bp",
+    "avg_diastolic_bp",
+    "avg_bp"
+]
+df_selected = proccessed_df
+df_selected = proccessed_df[selected_columns]
 
 #Saving the processed data to a CSV file
 proccessed_df.to_csv('C:\\Projects\\a_health_data_analysis\\firebase-health-data-analysis\\data\\final_processed_data.csv', index=False)
+df_selected.to_csv('C:\\Projects\\a_health_data_analysis\\firebase-health-data-analysis\\data\\cleaned_data.csv', index=False)
