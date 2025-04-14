@@ -3,7 +3,7 @@ import pandas as pd
 import json
 
 #Loading the JSON data
-with open('C:\\Users\\Rida.KD\\Projects\\a_health_data_analysis\\firebase-health-data-analysis\\data\\patient_data.json') as f:
+with open('C:\\Projects\\a_health_data_analysis\\firebase-health-data-analysis\\data\\patient_data.json') as f:
     data = json.load(f)
 
 records = data["documents"]
@@ -78,7 +78,7 @@ for doc in records:
 proccessed_df = pd.DataFrame(flat_records)
 
 #Saving the processed data to a CSV file
-proccessed_df.to_csv('C:\\Users\\Rida.KD\\Projects\\a_health_data_analysis\\firebase-health-data-analysis\\data\\processed_data.csv', index=False)
+proccessed_df.to_csv('C:\\Projects\\a_health_data_analysis\\firebase-health-data-analysis\\data\\processed_data.csv', index=False)
 
 # Creating a new ID column from the 'name' field
 proccessed_df['ID'] = proccessed_df['name'].apply(lambda x: x.split('/')[-1] if isinstance(x, str) else '')
@@ -101,9 +101,31 @@ for i in range(5):
         lambda x: x[i] if isinstance(x, list) and len(x) > i else None
     )
 
+proccessed_df.drop(columns=['date','ID','name','create_time','update_time','vitals_heart_rate', 'vitals_bp', 'vitals_temp'], inplace=True)
 
-proccessed_df.drop(columns=['name','vitals_heart_rate', 'vitals_bp', 'vitals_temp'], inplace=True)
 
+#Calculating average of heart rate
+heart_rate_cols = [col for col in proccessed_df.columns if col.startswith("vitals_heart_rate")]
+proccessed_df["avg_heart_rate"] = proccessed_df[heart_rate_cols].mean(axis=1)
+
+#Calculating average temperature
+temp_cols = [col for col in proccessed_df.columns if col.startswith("vitals_temp")]
+proccessed_df["avg_temperature"] = proccessed_df[temp_cols].mean(axis=1)
+
+#Calculating average of bp
+#Converting BP columns as spliting systolic/diastolic into separate columns
+bp_cols = [col for col in proccessed_df.columns if col.startswith("vitals_bp")]
+#Spliting BP into systolic and diastolic
+for i, col in enumerate(bp_cols):
+    proccessed_df[f'bp_sys_{i+1}'] = proccessed_df[col].str.split('/').str[0].astype(int)
+    proccessed_df[f'bp_dia_{i+1}'] = proccessed_df[col].str.split('/').str[1].astype(int)
+#Average systolic and diastolic separately
+sys_cols = [col for col in proccessed_df.columns if col.startswith("bp_sys_")]
+dia_cols = [col for col in proccessed_df.columns if col.startswith("bp_dia_")]
+proccessed_df["avg_systolic_bp"] = proccessed_df[sys_cols].mean(axis=1)
+proccessed_df["avg_diastolic_bp"] = proccessed_df[dia_cols].mean(axis=1)
+# Combineing the two average BP values into one column as "systolic/diastolic"
+proccessed_df["avg_bp"] = proccessed_df["avg_systolic_bp"].round(1).astype(str) + "/" + proccessed_df["avg_diastolic_bp"].round(1).astype(str)
 
 #Saving the processed data to a CSV file
-proccessed_df.to_csv('C:\\Users\\Rida.KD\\Projects\\a_health_data_analysis\\firebase-health-data-analysis\\data\\final_processed_data.csv', index=False)
+proccessed_df.to_csv('C:\\Projects\\a_health_data_analysis\\firebase-health-data-analysis\\data\\final_processed_data.csv', index=False)
