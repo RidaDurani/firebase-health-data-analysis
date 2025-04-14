@@ -41,3 +41,5 @@ st.plotly_chart(fig2)
 st.subheader('Vitals Table')
 vitals_columns = ['date', 'avg_heart_rate', 'sleep_duration_hours', 'activity_active_minutes', 'activity_steps']
 st.write(data[vitals_columns])
+
+#Base Dashboard added
