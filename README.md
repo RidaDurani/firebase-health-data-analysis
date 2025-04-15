@@ -98,11 +98,11 @@ Once you have install python packages on your setup, run this command on your te
 
    ```bash
 
-   git clone https://github.com/RidaDurani/firebase-health-data-analysis.git
+   //github.com/RidaDurani/firebase-health-data-analysis.git
 
 2. Dashboard Link:
 
 ```bash
-dashboard: https://firebase-health-data-analysis-nxt3ajm7cwtegsbpcuk6ij.streamlit.app/
+https://firebase-health-data-analysis-nxt3ajm7cwtegsbpcuk6ij.streamlit.app/
 
 
