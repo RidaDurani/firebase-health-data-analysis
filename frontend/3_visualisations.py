@@ -10,7 +10,8 @@ st.set_page_config(layout="wide")
 #Function to load the data
 @st.cache_data
 def load_data():
-    return pd.read_csv(r'C:\Projects\a_health_data_analysis\firebase-health-data-analysis\data\cleaned_data.csv')
+    return pd.read_csv('data/cleaned_data.csv')
+
 
 #Loading the csv data
 data = load_data()
