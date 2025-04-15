@@ -23,42 +23,34 @@ st.title('Patient Health Dashboard')
 if st.checkbox('Displaying raw data as table'):
     st.write(data)
 
-#Section 2: Creating a Heart Rate Chart
-# Avg Heart Rate vs Sleep Duration
-st.subheader('Heart Rate vs Sleep Duration')
-
+#Section 2: Creating a Heart Rate Chart - Avg Heart Rate vs Sleep Duration
+#st.subheader('Heart Rate vs Sleep Duration')
 fig_heart_rate_sleep = px.scatter(
     data,
     x='avg_heart_rate',
     y='sleep_duration_hours',
     color='sleep_quality',
     title='Heart Rate vs Sleep Duration',
-    labels={'avg_heart_rate': 'Avg Heart Rate (bpm)', 'sleep_duration_hours': 'Sleep Duration (hrs)'}
+    labels={'avg_heart_rate': 'Heart Rate', 'sleep_duration_hours': 'Sleep Duration (hrs)'}
 )
 st.plotly_chart(fig_heart_rate_sleep, use_container_width=True)
 
-
-#Section 3: Creating Sleep Duration Chart
-# Avg Temperature vs Sleep Interruptions
-st.subheader('Avg Temperature vs Sleep Interruptions')
-
+#Section 3: Creating Sleep Duration Chart - Avg Temperature vs Sleep Interruptions
+#st.subheader('Avg Temperature vs Sleep Interruptions')
 fig_temp_sleep_interrupt = px.scatter(
     data,
     x='avg_temperature',
     y='sleep_interruptions',
     color='sleep_quality',
-    title='Avg Temperature vs Sleep Interruptions',
-    labels={'avg_temperature': 'Avg Temperature (°F)', 'sleep_interruptions': 'Sleep Interruptions'}
+    title='Temperature vs Sleep Interruptions',
+    labels={'avg_temperature': 'Temperature', 'sleep_interruptions': 'Sleep Interruptions'}
 )
 st.plotly_chart(fig_temp_sleep_interrupt, use_container_width=True)
 
-#Section 4: Creating Vitals Table 
-# Avg BP vs Activity Steps
+#Section 4: Creating Vitals Table - Avg BP vs Activity Steps
 st.subheader('Blood Pressure vs Activity')
-
 # Split systolic and diastolic for better clarity
 data[['avg_systolic_bp', 'avg_diastolic_bp']] = data['avg_bp'].str.split('/', expand=True).astype(float)
-
 fig_bp_activity = px.scatter(
     data,
     x='activity_steps',
