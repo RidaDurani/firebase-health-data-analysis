@@ -98,7 +98,7 @@ fig3 = px.box(
     x='sleep_quality',
     y='sleep_duration_hours',
     color='sleep_quality',
-    title='Sleep Duration Distribution Across Sleep Quality Categories',
+    title='Sleep Duration Distribution Across Sleep Quality',
     labels={'sleep_quality': 'Sleep Quality', 'sleep_duration_hours': 'Sleep Duration (hrs)'}
 )
 
@@ -107,17 +107,14 @@ fig4 = px.box(
     x='sleep_quality',
     y='sleep_interruptions',
     color='sleep_quality',
-    title='Sleep Interruptions Across Sleep Quality Categories',
+    title='Sleep Interruptions Across Sleep Quality',
     labels={'sleep_quality': 'Sleep Quality', 'sleep_interruptions': 'Sleep Interruptions'}
 )
-
-#Remove unsupported properties
 fig4.update_traces(
     jitter=0.5,
-    marker=dict(size=6),  # Removed 'color' and 'colorscale'
+    marker=dict(size=6),  # 
     selector=dict(type='violin')
 )
-
 #Display side-by-side in two columns
 col1, col2 = st.columns(2)
 
@@ -130,18 +127,17 @@ with col2:
 
 #Section 7: Activity Analysis
 st.subheader('Activity Metrics Analysis')
-
-st.markdown("#### Steps in Active Minutes")
-fig_activity_trend = px.scatter(data, x='activity_active_minutes', y='activity_steps')
+#st.markdown("#### Steps in Active Minutes")
+fig_activity_trend = px.scatter(data, x='activity_active_minutes', y='activity_steps',title='Steps in Active Minutes')
 fig_activity_trend.update_layout(
     yaxis_title="Steps",
-    yaxis=dict(tickformat=',')  # This keeps numbers with commas, e.g., 10,000 instead of 10k
+    yaxis=dict(tickformat=',')  #keeping numbers with commas, e.g., 10,000 instead of 10k
 )
 fig_activity_trend.update_layout(xaxis_title="Active Minutes")
 st.plotly_chart(fig_activity_trend)
 
-#Scatter Plot: Sedentary Hours vs Active Minutes ---
-st.markdown("#### Sedentary vs Active Minutes")
+#Scatter Plot: Sedentary Hours vs Active Minutes
+#st.markdown("#### Sedentary vs Active Minutes")
 fig_scat = px.scatter(
     data,
     x='activity_sedentary_hours',
@@ -158,13 +154,13 @@ fig_scat = px.scatter(
 st.plotly_chart(fig_scat, use_container_width=True)
 
 # --- Box Plot: Steps by Sleep Quality ---
-st.markdown("#### Activity Steps Across Sleep Quality Levels")
+#st.markdown("#### Activity Steps Across Sleep Quality Levels")
 fig_box_steps = px.box(
     data_sorted,
     x='sleep_quality',
     y='activity_steps',
     color='sleep_quality',
-    title='Steps Distribution Across Sleep Quality Categories',
+    title='Steps Distribution Across Sleep Quality',
     labels={'activity_steps': 'Steps', 'sleep_quality': 'Sleep Quality'}
 )
 st.plotly_chart(fig_box_steps, use_container_width=True)
