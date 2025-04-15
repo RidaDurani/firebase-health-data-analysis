@@ -7,13 +7,12 @@ import plotly.express as px
 st.set_page_config(layout="wide")
 
 #Loading the csv data
-#Function
+#Function to load the data
 @st.cache_data
 def load_data():
-    df = pd.read_csv(r'C:\Projects\a_health_data_analysis\firebase-health-data-analysis\data\final_processed_data.csv')
-#Converting the 'date' column to datetime format for plotting
-    df['date'] = pd.to_datetime(df['date'], dayfirst=True)
-    return df
+    return pd.read_csv(r'C:\Projects\a_health_data_analysis\firebase-health-data-analysis\data\cleaned_data.csv')
+
+#Loading the csv data
 data = load_data()
 
 #Adding a header and description for the Dashboard 
@@ -25,35 +24,96 @@ if st.checkbox('Show raw data'):
     st.write(data)
 
 #Section 2: Creating a Heart Rate Chart
-st.subheader('Heart Rate Over Time')
+# Avg Heart Rate vs Sleep Duration
+st.subheader('Heart Rate vs Sleep Duration')
 
-#Calculating the average heart rate from the heart rate columns
-heart_rate_columns = [col for col in data.columns if col.startswith('vitals_heart_rate')]
-data['avg_heart_rate'] = data[heart_rate_columns].mean(axis=1)
+fig_heart_rate_sleep = px.scatter(
+    data,
+    x='avg_heart_rate',
+    y='sleep_duration_hours',
+    color='sleep_quality',
+    title='Heart Rate vs Sleep Duration',
+    labels={'avg_heart_rate': 'Avg Heart Rate (bpm)', 'sleep_duration_hours': 'Sleep Duration (hrs)'}
+)
+st.plotly_chart(fig_heart_rate_sleep, use_container_width=True)
 
-#Creating a line chart for average heart rate
-fig = px.line(data, x='date', y='avg_heart_rate', title='Average Heart Rate Over Time')
-st.plotly_chart(fig)
 
 #Section 3: Creating Sleep Duration Chart
-st.subheader('Sleep Duration')
-fig2 = px.bar(data, x='date', y='sleep_duration_hours', title='Sleep Duration Over Time')
-st.plotly_chart(fig2)
+# Avg Temperature vs Sleep Interruptions
+st.subheader('Avg Temperature vs Sleep Interruptions')
+
+fig_temp_sleep_interrupt = px.scatter(
+    data,
+    x='avg_temperature',
+    y='sleep_interruptions',
+    color='sleep_quality',
+    title='Avg Temperature vs Sleep Interruptions',
+    labels={'avg_temperature': 'Avg Temperature (°F)', 'sleep_interruptions': 'Sleep Interruptions'}
+)
+st.plotly_chart(fig_temp_sleep_interrupt, use_container_width=True)
 
 #Section 4: Creating Vitals Table 
-st.subheader('Vitals Table')
-vitals_columns = ['date', 'avg_heart_rate', 'sleep_duration_hours', 'activity_active_minutes', 'activity_steps']
-st.write(data[vitals_columns])
+# Avg BP vs Activity Steps
+st.subheader('Blood Pressure vs Activity')
 
-# Section 5 & 6: Sleep Duration and Interruptions vs Sleep Quality
+# Split systolic and diastolic for better clarity
+data[['avg_systolic_bp', 'avg_diastolic_bp']] = data['avg_bp'].str.split('/', expand=True).astype(float)
+
+fig_bp_activity = px.scatter(
+    data,
+    x='activity_steps',
+    y='avg_systolic_bp',
+    color='sleep_quality',
+    title='Blood Pressure vs Activity Steps (Systolic)',
+    labels={'activity_steps': 'Activity Steps', 'avg_systolic_bp': 'Systolic Blood Pressure (mmHg)'}
+)
+st.plotly_chart(fig_bp_activity, use_container_width=True)
+
+# Bar chart: BP grouped by Sleep Quality
+avg_bp_by_sleep = data.groupby('sleep_quality')[['avg_systolic_bp', 'avg_diastolic_bp']].mean().reset_index()
+fig_bp_bar = px.bar(
+    avg_bp_by_sleep,
+    x='sleep_quality',
+    y=['avg_systolic_bp', 'avg_diastolic_bp'],
+    barmode='group',
+    title='Average Blood Pressure by Sleep Quality',
+    labels={'value': 'Blood Pressure (mmHg)', 'sleep_quality': 'Sleep Quality'}
+)
+st.plotly_chart(fig_bp_bar, use_container_width=True)
+
+mean_protein = data['nutrition_macro_protein_g'].mean()
+mean_carbs = data['nutrition_macro_carbs_g'].mean()
+mean_fat = data['nutrition_macro_fat_g'].mean()
+
+fig_macro_ratio = px.pie(
+    names=['Protein', 'Carbs', 'Fat'],
+    values=[mean_protein, mean_carbs, mean_fat],
+    title='Average Macronutrient Ratio'
+)
+st.plotly_chart(fig_macro_ratio)
+
+macro_std = data[['nutrition_calories', 'nutrition_macro_protein_g', 'nutrition_macro_carbs_g', 'nutrition_macro_fat_g']].std()
+
+st.write("Standard Deviation (Lower = More Consistent Diet):")
+st.write(macro_std)
+fig_std = px.bar(
+    x=['Calories', 'Protein', 'Carbs', 'Fat'],
+    y=macro_std,
+    labels={'x': 'Nutrient', 'y': 'Standard Deviation'},
+    title='Dietary Consistency (Lower = More Consistent)'
+)
+st.plotly_chart(fig_std)
+
+
+#Section 5 & 6: Sleep Duration and Interruptions vs Sleep Quality
 st.subheader('Sleep Quality Analysis')
 
-# Ensure the sleep_quality column is ordered correctly
+#Ensure the sleep_quality column is ordered correctly
 ordered_categories = ['poor', 'fair', 'good', 'excellent']
 data['sleep_quality'] = pd.Categorical(data['sleep_quality'], categories=ordered_categories, ordered=True)
 data_sorted = data.sort_values('sleep_quality')
 
-# Create the two charts
+#Create the two charts
 fig3 = px.box(
     data_sorted,
     x='sleep_quality',
@@ -63,7 +123,7 @@ fig3 = px.box(
     labels={'sleep_quality': 'Sleep Quality', 'sleep_duration_hours': 'Sleep Duration (hrs)'}
 )
 
-fig4 = px.bar(
+fig4 = px.box(
     data_sorted,
     x='sleep_quality',
     y='sleep_interruptions',
@@ -72,14 +132,14 @@ fig4 = px.bar(
     labels={'sleep_quality': 'Sleep Quality', 'sleep_interruptions': 'Sleep Interruptions'}
 )
 
-# Remove unsupported properties
+#Remove unsupported properties
 fig4.update_traces(
     jitter=0.5,
     marker=dict(size=6),  # Removed 'color' and 'colorscale'
     selector=dict(type='violin')
 )
 
-# Display side-by-side in two columns
+#Display side-by-side in two columns
 col1, col2 = st.columns(2)
 
 with col1:
@@ -89,16 +149,19 @@ with col2:
     st.plotly_chart(fig4, use_container_width=True, key="fig4")
 
 
-# Section 7: Activity Analysis
+#Section 7: Activity Analysis
 st.subheader('Activity Metrics Analysis')
 
 st.markdown("#### Steps in Active Minutes")
-fig_activity_trend = px.bar(data, x='activity_active_minutes', y = 'activity_steps')
-fig_activity_trend.update_layout(yaxis_title="Active Steps")
+fig_activity_trend = px.scatter(data, x='activity_active_minutes', y='activity_steps')
+fig_activity_trend.update_layout(
+    yaxis_title="Steps",
+    yaxis=dict(tickformat=',')  # This keeps numbers with commas, e.g., 10,000 instead of 10k
+)
 fig_activity_trend.update_layout(xaxis_title="Active Minutes")
 st.plotly_chart(fig_activity_trend)
 
-# --- Scatter Plot: Sedentary Hours vs Active Minutes ---
+#Scatter Plot: Sedentary Hours vs Active Minutes ---
 st.markdown("#### Sedentary vs Active Minutes")
 fig_scat = px.scatter(
     data,
@@ -106,7 +169,6 @@ fig_scat = px.scatter(
     y='activity_active_minutes',
     color='sleep_quality',
     size='activity_steps',
-    hover_data=['date'],
     title='Sedentary Hours vs Active Minutes (Bubble Size = Steps)',
     labels={
         'activity_sedentary_hours': 'Sedentary Hours',
