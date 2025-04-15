@@ -48,7 +48,7 @@ fig_temp_sleep_interrupt = px.scatter(
 st.plotly_chart(fig_temp_sleep_interrupt, use_container_width=True)
 
 #Section 4: Creating Vitals Table - Avg BP vs Activity Steps
-st.subheader('Blood Pressure vs Activity')
+#st.subheader('Blood Pressure vs Activity')
 # Split systolic and diastolic for better clarity
 data[['avg_systolic_bp', 'avg_diastolic_bp']] = data['avg_bp'].str.split('/', expand=True).astype(float)
 fig_bp_activity = px.scatter(
@@ -69,7 +69,7 @@ fig_bp_bar = px.bar(
     y=['avg_systolic_bp', 'avg_diastolic_bp'],
     barmode='group',
     title='Average Blood Pressure by Sleep Quality',
-    labels={'value': 'Blood Pressure (mmHg)', 'sleep_quality': 'Sleep Quality'}
+    labels={'value': 'Blood Pressure', 'sleep_quality': 'Sleep Quality'}
 )
 st.plotly_chart(fig_bp_bar, use_container_width=True)
 
@@ -83,19 +83,6 @@ fig_macro_ratio = px.pie(
     title='Average Macronutrient Ratio'
 )
 st.plotly_chart(fig_macro_ratio)
-
-macro_std = data[['nutrition_calories', 'nutrition_macro_protein_g', 'nutrition_macro_carbs_g', 'nutrition_macro_fat_g']].std()
-
-st.write("Standard Deviation (Lower = More Consistent Diet):")
-st.write(macro_std)
-fig_std = px.bar(
-    x=['Calories', 'Protein', 'Carbs', 'Fat'],
-    y=macro_std,
-    labels={'x': 'Nutrient', 'y': 'Standard Deviation'},
-    title='Dietary Consistency (Lower = More Consistent)'
-)
-st.plotly_chart(fig_std)
-
 
 #Section 5 & 6: Sleep Duration and Interruptions vs Sleep Quality
 st.subheader('Sleep Quality Analysis')
