@@ -103,7 +103,6 @@ for i in range(5):
 
 proccessed_df.drop(columns=['date','ID','name','create_time','update_time','vitals_heart_rate', 'vitals_bp', 'vitals_temp'], inplace=True)
 
-
 #Calculating average of heart rate
 heart_rate_cols = [col for col in proccessed_df.columns if col.startswith("vitals_heart_rate")]
 proccessed_df["avg_heart_rate"] = proccessed_df[heart_rate_cols].mean(axis=1).round(2)
