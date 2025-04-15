@@ -17,10 +17,10 @@ data = load_data()
 
 #Adding a header and description for the Dashboard 
 st.title('Patient Health Dashboard')
-st.write('Explore patient health data through various visualisations')
+#st.write('Exploring patient health data through various visualisations')
 
 #Section 1: Showing the Data as a Table
-if st.checkbox('Show raw data'):
+if st.checkbox('Displaying raw data as table'):
     st.write(data)
 
 #Section 2: Creating a Heart Rate Chart
